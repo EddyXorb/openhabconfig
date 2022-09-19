@@ -1,0 +1,12 @@
+Group Wohnung "Wohnung" <house> ["Apartment"]
+Group Flur "Flur" <corridor> (Wohnung) ["Floor"]
+Group Schlafzimmer "Schlafzimmer" <bedroom> (Wohnung) ["Bedroom"]
+Group Kueche "Küche" <kitchen> (Wohnung) ["Kitchen"]
+Group Wohnzimmer "Wohnzimmer" <party> (Wohnung) ["LivingRoom"]
+
+Group WohnzimmerLicht "Wohnzimmer Licht" <light> (Wohnzimmer) ["Lightbulb"]
+
+Switch   Steckdose1PowerSwitch   "On/off switch" <lightbulb>  (WohnzimmerLicht) {channel="mqtt:topic:tasmota:Steckdose1:PowerSwitch"}
+Number   Steckdose1Power         "Leistung [%s Watt]" <energy> (WohnzimmerLicht)  {channel="mqtt:topic:tasmota:Steckdose1:Power"}
+Number   Steckdose1EnergyToday   "Energieverbrauch heute [%s kWh]"  <poweroutlet> (WohnzimmerLicht)  {channel="mqtt:topic:tasmota:Steckdose1:EnergyToday"}
+Number   Steckdose1EnergyTotal   "Energieverbrauch insgesamt [%s kWh]" <poweroutlet>  (WohnzimmerLicht)  {channel="mqtt:topic:tasmota:Steckdose1:EnergyAll"}

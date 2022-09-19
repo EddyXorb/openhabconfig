@@ -1,0 +1,10 @@
+Bridge mqtt:broker:mymqtt [ host="mqtt",secure=false, username="mymqtt", password="mypassword" ]
+
+Thing mqtt:topic:tasmota:Steckdose1 "Steckdose1" (mqtt:broker:mymqtt)
+{
+    Channels:
+    Type switch : PowerSwitch "Schalter"  [stateTopic="stat/Steckdose1/POWER",   commandTopic="cmnd/Steckdose1/POWER", on="ON", off="OFF"]
+    Type number : Power    "Leistung"    [stateTopic="tele/Steckdose1/SENSOR", transformationPattern="JSONPATH:$.ENERGY.Power", UnitOfMeasurement="Watt"]
+    Type number : EnergyToday "Energieverbrauch heute"     [stateTopic="tele/Steckdose1/SENSOR", transformationPattern="JSONPATH:$.ENERGY.Today"]
+    Type number : EnergyAll "Energieverbrauch insgesamt"    [stateTopic="tele/Steckdose1/SENSOR", transformationPattern="JSONPATH:$.ENERGY.Total"]
+}
