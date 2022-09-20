@@ -1,6 +1,7 @@
-sitemap Main label="Sitemap Label" {
-    Frame label="Steckdosen"  {
-       // Default item=Steckdose1PowerSwitch
-         Switch item=Steckdose1PowerSwitch
+sitemap Main label="Wohnung" {
+    Frame label="Zimmer"
+    {
+         Group item=Wohnzimmer
     }
+         
 }
