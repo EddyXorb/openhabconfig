@@ -1,7 +1,3 @@
 sitemap Main label="Wohnung" {
-    Frame label="Zimmer"
-    {
-         Group item=Wohnzimmer
-    }
-         
+    Group item=Wohnung
 }

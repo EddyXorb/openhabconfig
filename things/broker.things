@@ -8,3 +8,58 @@ Thing mqtt:topic:tasmota:Steckdose1 "Steckdose1" (mqtt:broker:mymqtt)
     Type number : EnergyToday "Energieverbrauch heute"     [stateTopic="tele/Steckdose1/SENSOR", transformationPattern="JSONPATH:$.ENERGY.Today"]
     Type number : EnergyAll "Energieverbrauch insgesamt"    [stateTopic="tele/Steckdose1/SENSOR", transformationPattern="JSONPATH:$.ENERGY.Total"]
 }
+
+
+Thing mqtt:topic:tasmota:Steckdose2 "Steckdose2" (mqtt:broker:mymqtt)
+{
+    Channels:
+    Type switch : PowerSwitch "Schalter"  [stateTopic="stat/Steckdose2/POWER",   commandTopic="cmnd/Steckdose2/POWER", on="ON", off="OFF"]
+    Type number : Power    "Leistung"    [stateTopic="tele/Steckdose2/SENSOR", transformationPattern="JSONPATH:$.ENERGY.Power", UnitOfMeasurement="Watt"]
+    Type number : EnergyToday "Energieverbrauch heute"     [stateTopic="tele/Steckdose2/SENSOR", transformationPattern="JSONPATH:$.ENERGY.Today"]
+    Type number : EnergyAll "Energieverbrauch insgesamt"    [stateTopic="tele/Steckdose2/SENSOR", transformationPattern="JSONPATH:$.ENERGY.Total"]
+}
+
+Thing mqtt:topic:tasmota:Steckdose3 "Steckdose3" (mqtt:broker:mymqtt)
+{
+    Channels:
+    Type switch : PowerSwitch "Schalter"  [stateTopic="stat/Steckdose3/POWER",   commandTopic="cmnd/Steckdose3/POWER", on="ON", off="OFF"]
+    Type number : Power    "Leistung"    [stateTopic="tele/Steckdose3/SENSOR", transformationPattern="JSONPATH:$.ENERGY.Power", UnitOfMeasurement="Watt"]
+    Type number : EnergyToday "Energieverbrauch heute"     [stateTopic="tele/Steckdose3/SENSOR", transformationPattern="JSONPATH:$.ENERGY.Today"]
+    Type number : EnergyAll "Energieverbrauch insgesamt"    [stateTopic="tele/Steckdose3/SENSOR", transformationPattern="JSONPATH:$.ENERGY.Total"]
+}
+
+Thing mqtt:topic:tasmota:Steckdose4 "Steckdose4" (mqtt:broker:mymqtt)
+{
+    Channels:
+    Type switch : PowerSwitch "Schalter"  [stateTopic="stat/Steckdose4/POWER",   commandTopic="cmnd/Steckdose4/POWER", on="ON", off="OFF"]
+    Type number : Power    "Leistung"    [stateTopic="tele/Steckdose4/SENSOR", transformationPattern="JSONPATH:$.ENERGY.Power", UnitOfMeasurement="Watt"]
+    Type number : EnergyToday "Energieverbrauch heute"     [stateTopic="tele/Steckdose4/SENSOR", transformationPattern="JSONPATH:$.ENERGY.Today"]
+    Type number : EnergyAll "Energieverbrauch insgesamt"    [stateTopic="tele/Steckdose4/SENSOR", transformationPattern="JSONPATH:$.ENERGY.Total"]
+}
+
+Thing mqtt:topic:tasmota:Steckdose5 "Steckdose5" (mqtt:broker:mymqtt)
+{
+    Channels:
+    Type switch : PowerSwitch "Schalter"  [stateTopic="stat/Steckdose5/POWER",   commandTopic="cmnd/Steckdose5/POWER", on="ON", off="OFF"]
+    Type number : Power    "Leistung"    [stateTopic="tele/Steckdose5/SENSOR", transformationPattern="JSONPATH:$.ENERGY.Power", UnitOfMeasurement="Watt"]
+    Type number : EnergyToday "Energieverbrauch heute"     [stateTopic="tele/Steckdose5/SENSOR", transformationPattern="JSONPATH:$.ENERGY.Today"]
+    Type number : EnergyAll "Energieverbrauch insgesamt"    [stateTopic="tele/Steckdose5/SENSOR", transformationPattern="JSONPATH:$.ENERGY.Total"]
+}
+
+Thing mqtt:topic:tasmota:Steckdose6 "Steckdose6" (mqtt:broker:mymqtt)
+{
+    Channels:
+    Type switch : PowerSwitch "Schalter"  [stateTopic="stat/Steckdose6/POWER",   commandTopic="cmnd/Steckdose6/POWER", on="ON", off="OFF"]
+    Type number : Power    "Leistung"    [stateTopic="tele/Steckdose6/SENSOR", transformationPattern="JSONPATH:$.ENERGY.Power", UnitOfMeasurement="Watt"]
+    Type number : EnergyToday "Energieverbrauch heute"     [stateTopic="tele/Steckdose6/SENSOR", transformationPattern="JSONPATH:$.ENERGY.Today"]
+    Type number : EnergyAll "Energieverbrauch insgesamt"    [stateTopic="tele/Steckdose6/SENSOR", transformationPattern="JSONPATH:$.ENERGY.Total"]
+}
+
+Thing mqtt:topic:tasmota:Steckdose7 "Steckdose7" (mqtt:broker:mymqtt)
+{
+    Channels:
+    Type switch : PowerSwitch "Schalter"  [stateTopic="stat/Steckdose7/POWER",   commandTopic="cmnd/Steckdose7/POWER", on="ON", off="OFF"]
+    Type number : Power    "Leistung"    [stateTopic="tele/Steckdose7/SENSOR", transformationPattern="JSONPATH:$.ENERGY.Power", UnitOfMeasurement="Watt"]
+    Type number : EnergyToday "Energieverbrauch heute"     [stateTopic="tele/Steckdose7/SENSOR", transformationPattern="JSONPATH:$.ENERGY.Today"]
+    Type number : EnergyAll "Energieverbrauch insgesamt"    [stateTopic="tele/Steckdose7/SENSOR", transformationPattern="JSONPATH:$.ENERGY.Total"]
+}
