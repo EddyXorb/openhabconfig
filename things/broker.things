@@ -61,5 +61,13 @@ Thing mqtt:topic:tasmota:Steckdose7 "Steckdose7" (mqtt:broker:mymqtt)
     Type switch : PowerSwitch "Schalter"  [stateTopic="stat/Steckdose7/POWER",   commandTopic="cmnd/Steckdose7/POWER", on="ON", off="OFF"]
     Type number : Power    "Leistung"    [stateTopic="tele/Steckdose7/SENSOR", transformationPattern="JSONPATH:$.ENERGY.Power", UnitOfMeasurement="Watt"]
     Type number : EnergyToday "Energieverbrauch heute"     [stateTopic="tele/Steckdose7/SENSOR", transformationPattern="JSONPATH:$.ENERGY.Today"]
-    Type number : EnergyAll "Energieverbrauch insgesamt"    [stateTopic="tele/Steckdose7/SENSOR", transformationPattern="JSONPATH:$.ENERGY.Total"]
+     Type number : EnergyAll "Energieverbrauch insgesamt"    [stateTopic="tele/Steckdose7/SENSOR", transformationPattern="JSONPATH:$.ENERGY.Total"]
+}
+
+Thing mqtt:topic:switchbot:temperature1 "Temperature1" (mqtt:broker:mymqtt)
+{
+Channels: 
+    Type number : Temperature "Temperatur" [stateTopic="switchbot/esp32/meter/temperatur1/attributes", UnitOfMeasurement="Celsius", transformationPattern="JSONPATH:$.C"]
+    Type number : Humidity "Feuchtigkeit" [stateTopic="switchbot/esp32/meter/temperatur1/attributes", UnitOfMeasurement="%", transformationPattern="JSONPATH:$.hum"]
+    Type number : Battery "Batterie" [stateTopic="switchbot/esp32/meter/temperatur1/attributes", UnitOfMeasurement="%", transformationPattern="JSONPATH:$.batt"]
 }
