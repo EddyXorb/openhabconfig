@@ -52,14 +52,14 @@ Number    Steckdose7EnergyToday      "heute [%s kWh]"            <poweroutlet>  
 Number    Steckdose7EnergyAll        "insgesamt [%s kWh]"        <poweroutlet>     (Thermomix)               ["Measurement","Energy"]         {channel="mqtt:topic:tasmota:Steckdose7:EnergyAll"}
 
 Switch    Steckdose8PowerSwitch      "Schalter"                  <switch>          (SchreibtischIlaria)      ["Switch"]                       {channel="mqtt:topic:tasmota:Steckdose8:PowerSwitch"}
-Number    Steckdose8Power            "Leistung"                  <poweroutlet>     (SchreibtischIlaria)      ["Measurement","Power"]          {channel="mqtt:topic:tasmota:Steckdose8:Power"}
+Number    Steckdose8Power            "Leistung [%s Watt]"                  <poweroutlet>     (SchreibtischIlaria)      ["Measurement","Power"]          {channel="mqtt:topic:tasmota:Steckdose8:Power"}
 Number    Steckdose8EnergyToday      "heute [%s kWh]"            <poweroutlet>     (SchreibtischIlaria)      ["Measurement","Energy"]         {channel="mqtt:topic:tasmota:Steckdose8:EnergyToday"}
 Number    Steckdose8EnergyAll        "insgesamt [%s kWh]"        <poweroutlet>     (SchreibtischIlaria)      ["Measurement","Energy"]         {channel="mqtt:topic:tasmota:Steckdose8:EnergyAll"}
 
-Number    Temperature1Temperature    "Temperatur"                <temperature>     (MeterPlus)               ["Measurement","Temperature"]    {channel="mqtt:topic:switchbot:temperature1:Temperature"}
-Number    Temperature1Humidity       "Feuchtigkeit"              <humidity>        (MeterPlus)               ["Measurement","Humidity"]       {channel="mqtt:topic:switchbot:temperature1:Humidity"}
-Number    Temperature1Battery        "Batterie"                  <batterylevel>    (MeterPlus)               ["Measurement","Battery"]        {channel="mqtt:topic:switchbot:temperature1:Battery"}
+Number    Temperature1Temperature    "Temperatur [%s °C]"                <temperature>     (MeterPlus)               ["Measurement","Temperature"]    {channel="mqtt:topic:switchbot:temperature1:Temperature"}
+Number    Temperature1Humidity       "Feuchtigkeit [%s Proz.]"              <humidity>        (MeterPlus)               ["Measurement","Humidity"]       {channel="mqtt:topic:switchbot:temperature1:Humidity"}
+Number    Temperature1Battery        "Batterie [%s Proz.]"                  <batterylevel>    (MeterPlus)               ["Measurement","Battery"]        {channel="mqtt:topic:switchbot:temperature1:Battery"}
 
-Number    Temperature2Temperature    "Temperatur"                <temperature>     (MeterPlus2)              ["Measurement","Temperature"]    {channel="mqtt:topic:switchbot:temperature2:Temperature"}
-Number    Temperature2Humidity       "Feuchtigkeit"              <humidity>        (MeterPlus2)              ["Measurement","Humidity"]       {channel="mqtt:topic:switchbot:temperature2:Humidity"}
-Number    Temperature2Battery        "Batterie"                  <batterylevel>    (MeterPlus2)              ["Measurement","Battery"]        {channel="mqtt:topic:switchbot:temperature2:Battery"}
+Number    Temperature2Temperature    "Temperatur [%s °C]"                <temperature>     (MeterPlus2)              ["Measurement","Temperature"]    {channel="mqtt:topic:switchbot:temperature2:Temperature"}
+Number    Temperature2Humidity       "Feuchtigkeit [%s Proz.]"              <humidity>        (MeterPlus2)              ["Measurement","Humidity"]       {channel="mqtt:topic:switchbot:temperature2:Humidity"}
+Number    Temperature2Battery        "Batterie [%s Proz.]"                  <batterylevel>    (MeterPlus2)              ["Measurement","Battery"]        {channel="mqtt:topic:switchbot:temperature2:Battery"}
