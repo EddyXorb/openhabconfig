@@ -1,65 +1,72 @@
-Group     Wohnung                    "Wohnung"                   <house>                                     ["Apartment"]
-Group     Flur                       "Flur"                      <corridor>        (Wohnung)                 ["Floor"]
-Group     Schlafzimmer               "Schlafzimmer"              <bedroom>         (Wohnung)                 ["Bedroom"]
-Group     Kueche                     "Küche"                     <kitchen>         (Wohnung)                 ["Kitchen"]
-Group     Wohnzimmer                 "Wohnzimmer"                <party>           (Wohnung)                 ["LivingRoom"]
-Group     Bad                        "Bad"                       <bath>            (Wohnung)                 ["Bathroom"]
+Group     Wohnung                    "Wohnung"                    <house>                                     ["Apartment"]
+Group     Flur                       "Flur"                       <corridor>        (Wohnung)                 ["Floor"]
+Group     Schlafzimmer               "Schlafzimmer"               <bedroom>         (Wohnung)                 ["Bedroom"]
+Group     Kueche                     "Küche"                      <kitchen>         (Wohnung)                 ["Kitchen"]
+Group     Wohnzimmer                 "Wohnzimmer"                 <party>           (Wohnung)                 ["LivingRoom"]
+Group     Kinderzimmer               "Kinderzimmer"               <party>           (Wohnung)                 ["LivingRoom"]
+Group     Bad                        "Bad"                        <bath>            (Wohnung)                 ["Bathroom"]
 
-Group     WohnzimmerLicht            "Wohnzimmer Licht"          <light>           (Wohnzimmer)              ["Lightbulb"]
-Group     SchreibtischClaudius       "Schreibtisch Claudius"     <office>          (Schlafzimmer)            ["PowerOutlet"]
-Group     Sofasteckdose              "Steckdose Sofa"            <poweroutlet>     (Wohnzimmer)              ["PowerOutlet"]
-Group     Servertechnik              "Servertechnik"             <poweroutlet>     (Wohnzimmer)              ["PowerOutlet"]
-Group     Thermomix                  "Thermomix"                 <poweroutlet>     (Kueche)                  ["PowerOutlet"]
-Group     Kaffeemaschine             "Kaffeemaschine"            <poweroutlet>     (Kueche)                  ["PowerOutlet"]
-Group     Waschmaschine              "Waschmaschine"             <whitegood>       (Bad)                     ["WhiteGood"]
-Group     SchreibtischIlaria         "Schreibtisch Ilaria"       <poweroutlet>     (Wohnzimmer)              ["PowerOutlet"]
+Group     WohnzimmerLicht            "Wohnzimmer Licht"           <light>           (Wohnzimmer)              ["Lightbulb"]
+Group     SchreibtischClaudius       "Schreibtisch Claudius"      <office>          (Schlafzimmer)            ["PowerOutlet"]
+Group     Sofasteckdose              "Steckdose Sofa"             <poweroutlet>     (Wohnzimmer)              ["PowerOutlet"]
+Group     Servertechnik              "Servertechnik"              <poweroutlet>     (Wohnzimmer)              ["PowerOutlet"]
+Group     Thermomix                  "Thermomix"                  <poweroutlet>     (Kueche)                  ["PowerOutlet"]
+Group     Kaffeemaschine             "Kaffeemaschine"             <poweroutlet>     (Kueche)                  ["PowerOutlet"]
+Group     Waschmaschine              "Waschmaschine"              <whitegood>       (Bad)                     ["WhiteGood"]
+//Group     SchreibtischIlaria         "Schreibtisch Ilaria"        <poweroutlet>     (Kinderzimmer)            ["PowerOutlet"]
+Group     KinderzimmerLicht          "Kinderzimmer Licht"         <light>           (Kinderzimmer)            ["Lightbulb"]
 
-Group     MeterPlus                  "Switchbot Meter Plus"      <temperature>     (Wohnzimmer)              ["Sensor"]
-Group     MeterPlus2                 "Switchbot Meter Plus 2"    <temperature>     (Schlafzimmer)            ["Sensor"]
+Group     MeterPlus                  "Switchbot Meter Plus"       <temperature>     (Wohnzimmer)              ["Sensor"]
+Group     MeterPlus2                 "Switchbot Meter Plus 2"     <temperature>     (Schlafzimmer)            ["Sensor"]
 
-Switch    Steckdose1PowerSwitch      "On/off Schalter"           <lightbulb>       (WohnzimmerLicht)         ["Switch"]                       {channel="mqtt:topic:tasmota:Steckdose1:PowerSwitch"}
-Number    Steckdose1Power            "Leistung [%s Watt]"        <energy>          (WohnzimmerLicht)         ["Measurement","Power"]          {channel="mqtt:topic:tasmota:Steckdose1:Power"}
-Number    Steckdose1EnergyToday      "heute [%s kWh]"            <poweroutlet>     (WohnzimmerLicht)         ["Measurement","Energy"]         {channel="mqtt:topic:tasmota:Steckdose1:EnergyToday"}
-Number    Steckdose1EnergyTotal      "insgesamt [%s kWh]"        <poweroutlet>     (WohnzimmerLicht)         ["Measurement","Energy"]         {channel="mqtt:topic:tasmota:Steckdose1:EnergyAll"}
+Switch    Steckdose1PowerSwitch      "On/off Schalter"            <lightbulb>       (WohnzimmerLicht)         ["Switch"]                       {channel="mqtt:topic:tasmota:Steckdose1:PowerSwitch"}
+Number    Steckdose1Power            "Leistung [%s Watt]"         <energy>          (WohnzimmerLicht)         ["Measurement","Power"]          {channel="mqtt:topic:tasmota:Steckdose1:Power"}
+Number    Steckdose1EnergyToday      "heute [%s kWh]"             <poweroutlet>     (WohnzimmerLicht)         ["Measurement","Energy"]         {channel="mqtt:topic:tasmota:Steckdose1:EnergyToday"}
+Number    Steckdose1EnergyTotal      "insgesamt [%s kWh]"         <poweroutlet>     (WohnzimmerLicht)         ["Measurement","Energy"]         {channel="mqtt:topic:tasmota:Steckdose1:EnergyAll"}
 
-Switch    Steckdose2PowerSwitch      "On/off Schalter"           <switch>          (SchreibtischClaudius)    ["Switch"]                       {channel="mqtt:topic:tasmota:Steckdose2:PowerSwitch"}
-Number    Steckdose2Power            "Leistung [%s Watt]"        <energy>          (SchreibtischClaudius)    ["Measurement","Power"]          {channel="mqtt:topic:tasmota:Steckdose2:Power"}
-Number    Steckdose2EnergyToday      "heute [%s kWh]"            <poweroutlet>     (SchreibtischClaudius)    ["Measurement","Energy"]         {channel="mqtt:topic:tasmota:Steckdose2:EnergyToday"}
-Number    Steckdose2EnergyAll        "insgesamt [%s kWh]"        <poweroutlet>     (SchreibtischClaudius)    ["Measurement","Energy"]         {channel="mqtt:topic:tasmota:Steckdose2:EnergyAll"}
+Switch    Steckdose2PowerSwitch      "On/off Schalter"            <switch>          (SchreibtischClaudius)    ["Switch"]                       {channel="mqtt:topic:tasmota:Steckdose2:PowerSwitch"}
+Number    Steckdose2Power            "Leistung [%s Watt]"         <energy>          (SchreibtischClaudius)    ["Measurement","Power"]          {channel="mqtt:topic:tasmota:Steckdose2:Power"}
+Number    Steckdose2EnergyToday      "heute [%s kWh]"             <poweroutlet>     (SchreibtischClaudius)    ["Measurement","Energy"]         {channel="mqtt:topic:tasmota:Steckdose2:EnergyToday"}
+Number    Steckdose2EnergyAll        "insgesamt [%s kWh]"         <poweroutlet>     (SchreibtischClaudius)    ["Measurement","Energy"]         {channel="mqtt:topic:tasmota:Steckdose2:EnergyAll"}
 
-Switch    Steckdose3PowerSwitch      "On/off Schalter"           <switch>          (Sofasteckdose)           ["Switch"]                       {channel="mqtt:topic:tasmota:Steckdose3:PowerSwitch"}
-Number    Steckdose3Power            "Leistung [%s Watt]"        <energy>          (Sofasteckdose)           ["Measurement","Power"]          {channel="mqtt:topic:tasmota:Steckdose3:Power"}
-Number    Steckdose3EnergyToday      "heute [%s kWh]"            <poweroutlet>     (Sofasteckdose)           ["Measurement","Energy"]         {channel="mqtt:topic:tasmota:Steckdose3:EnergyToday"}
-Number    Steckdose3EnergyAll        "insgesamt [%s kWh]"        <poweroutlet>     (Sofasteckdose)           ["Measurement","Energy"]         {channel="mqtt:topic:tasmota:Steckdose3:EnergyAll"}
+Switch    Steckdose3PowerSwitch      "On/off Schalter"            <switch>          (Sofasteckdose)           ["Switch"]                       {channel="mqtt:topic:tasmota:Steckdose3:PowerSwitch"}
+Number    Steckdose3Power            "Leistung [%s Watt]"         <energy>          (Sofasteckdose)           ["Measurement","Power"]          {channel="mqtt:topic:tasmota:Steckdose3:Power"}
+Number    Steckdose3EnergyToday      "heute [%s kWh]"             <poweroutlet>     (Sofasteckdose)           ["Measurement","Energy"]         {channel="mqtt:topic:tasmota:Steckdose3:EnergyToday"}
+Number    Steckdose3EnergyAll        "insgesamt [%s kWh]"         <poweroutlet>     (Sofasteckdose)           ["Measurement","Energy"]         {channel="mqtt:topic:tasmota:Steckdose3:EnergyAll"}
 
-Number    Steckdose4Power            "Leistung [%s Watt]"        <energy>          (Servertechnik)           ["Measurement","Power"]          {channel="mqtt:topic:tasmota:Steckdose4:Power"}
-Number    Steckdose4EnergyToday      "heute [%s kWh]"            <poweroutlet>     (Servertechnik)           ["Measurement","Energy"]         {channel="mqtt:topic:tasmota:Steckdose4:EnergyToday"}
-Number    Steckdose4EnergyAll        "insgesamt [%s kWh]"        <poweroutlet>     (Servertechnik)           ["Measurement","Energy"]         {channel="mqtt:topic:tasmota:Steckdose4:EnergyAll"}
+Number    Steckdose4Power            "Leistung [%s Watt]"         <energy>          (Servertechnik)           ["Measurement","Power"]          {channel="mqtt:topic:tasmota:Steckdose4:Power"}
+Number    Steckdose4EnergyToday      "heute [%s kWh]"             <poweroutlet>     (Servertechnik)           ["Measurement","Energy"]         {channel="mqtt:topic:tasmota:Steckdose4:EnergyToday"}
+Number    Steckdose4EnergyAll        "insgesamt [%s kWh]"         <poweroutlet>     (Servertechnik)           ["Measurement","Energy"]         {channel="mqtt:topic:tasmota:Steckdose4:EnergyAll"}
 
-Switch    Steckdose5PowerSwitch      "On/off Schalter"           <switch>          (Waschmaschine)           ["Switch"]                       {channel="mqtt:topic:tasmota:Steckdose5:PowerSwitch"}
-Number    Steckdose5Power            "Leistung [%s Watt]"        <energy>          (Waschmaschine)           ["Measurement","Power"]          {channel="mqtt:topic:tasmota:Steckdose5:Power"}
-Number    Steckdose5EnergyToday      "heute [%s kWh]"            <poweroutlet>     (Waschmaschine)           ["Measurement","Energy"]         {channel="mqtt:topic:tasmota:Steckdose5:EnergyToday"}
-Number    Steckdose5EnergyAll        "insgesamt [%s kWh]"        <poweroutlet>     (Waschmaschine)           ["Measurement","Energy"]         {channel="mqtt:topic:tasmota:Steckdose5:EnergyAll"}
+Switch    Steckdose5PowerSwitch      "On/off Schalter"            <switch>          (Waschmaschine)           ["Switch"]                       {channel="mqtt:topic:tasmota:Steckdose5:PowerSwitch"}
+Number    Steckdose5Power            "Leistung [%s Watt]"         <energy>          (Waschmaschine)           ["Measurement","Power"]          {channel="mqtt:topic:tasmota:Steckdose5:Power"}
+Number    Steckdose5EnergyToday      "heute [%s kWh]"             <poweroutlet>     (Waschmaschine)           ["Measurement","Energy"]         {channel="mqtt:topic:tasmota:Steckdose5:EnergyToday"}
+Number    Steckdose5EnergyAll        "insgesamt [%s kWh]"         <poweroutlet>     (Waschmaschine)           ["Measurement","Energy"]         {channel="mqtt:topic:tasmota:Steckdose5:EnergyAll"}
 
-Switch    Steckdose6PowerSwitch      "On/off Schalter"           <switch>          (Kaffeemaschine)          ["Switch"]                       {channel="mqtt:topic:tasmota:Steckdose6:PowerSwitch"}
-Number    Steckdose6Power            "Leistung [%s Watt]"        <energy>          (Kaffeemaschine)          ["Measurement","Power"]          {channel="mqtt:topic:tasmota:Steckdose6:Power"}
-Number    Steckdose6EnergyToday      "heute [%s kWh]"            <poweroutlet>     (Kaffeemaschine)          ["Measurement","Energy"]         {channel="mqtt:topic:tasmota:Steckdose6:EnergyToday"}
-Number    Steckdose6EnergyAll        "insgesamt [%s kWh]"        <poweroutlet>     (Kaffeemaschine)          ["Measurement","Energy"]         {channel="mqtt:topic:tasmota:Steckdose6:EnergyAll"}
+Switch    Steckdose6PowerSwitch      "On/off Schalter"            <switch>          (Kaffeemaschine)          ["Switch"]                       {channel="mqtt:topic:tasmota:Steckdose6:PowerSwitch"}
+Number    Steckdose6Power            "Leistung [%s Watt]"         <energy>          (Kaffeemaschine)          ["Measurement","Power"]          {channel="mqtt:topic:tasmota:Steckdose6:Power"}
+Number    Steckdose6EnergyToday      "heute [%s kWh]"             <poweroutlet>     (Kaffeemaschine)          ["Measurement","Energy"]         {channel="mqtt:topic:tasmota:Steckdose6:EnergyToday"}
+Number    Steckdose6EnergyAll        "insgesamt [%s kWh]"         <poweroutlet>     (Kaffeemaschine)          ["Measurement","Energy"]         {channel="mqtt:topic:tasmota:Steckdose6:EnergyAll"}
 
-Switch    Steckdose7PowerSwitch      "On/off Schalter"           <switch>          (Thermomix)               ["Switch"]                       {channel="mqtt:topic:tasmota:Steckdose7:PowerSwitch"}
-Number    Steckdose7Power            "Leistung [%s Watt]"        <energy>          (Thermomix)               ["Measurement","Power"]          {channel="mqtt:topic:tasmota:Steckdose7:Power"}
-Number    Steckdose7EnergyToday      "heute [%s kWh]"            <poweroutlet>     (Thermomix)               ["Measurement","Energy"]         {channel="mqtt:topic:tasmota:Steckdose7:EnergyToday"}
-Number    Steckdose7EnergyAll        "insgesamt [%s kWh]"        <poweroutlet>     (Thermomix)               ["Measurement","Energy"]         {channel="mqtt:topic:tasmota:Steckdose7:EnergyAll"}
+Switch    Steckdose7PowerSwitch      "On/off Schalter"            <switch>          (Thermomix)               ["Switch"]                       {channel="mqtt:topic:tasmota:Steckdose7:PowerSwitch"}
+Number    Steckdose7Power            "Leistung [%s Watt]"         <energy>          (Thermomix)               ["Measurement","Power"]          {channel="mqtt:topic:tasmota:Steckdose7:Power"}
+Number    Steckdose7EnergyToday      "heute [%s kWh]"             <poweroutlet>     (Thermomix)               ["Measurement","Energy"]         {channel="mqtt:topic:tasmota:Steckdose7:EnergyToday"}
+Number    Steckdose7EnergyAll        "insgesamt [%s kWh]"         <poweroutlet>     (Thermomix)               ["Measurement","Energy"]         {channel="mqtt:topic:tasmota:Steckdose7:EnergyAll"}
 
-Switch    Steckdose8PowerSwitch      "Schalter"                  <switch>          (SchreibtischIlaria)      ["Switch"]                       {channel="mqtt:topic:tasmota:Steckdose8:PowerSwitch"}
-Number    Steckdose8Power            "Leistung [%s Watt]"                  <poweroutlet>     (SchreibtischIlaria)      ["Measurement","Power"]          {channel="mqtt:topic:tasmota:Steckdose8:Power"}
-Number    Steckdose8EnergyToday      "heute [%s kWh]"            <poweroutlet>     (SchreibtischIlaria)      ["Measurement","Energy"]         {channel="mqtt:topic:tasmota:Steckdose8:EnergyToday"}
-Number    Steckdose8EnergyAll        "insgesamt [%s kWh]"        <poweroutlet>     (SchreibtischIlaria)      ["Measurement","Energy"]         {channel="mqtt:topic:tasmota:Steckdose8:EnergyAll"}
+Switch    Steckdose8PowerSwitch      "Schalter"                   <switch>          (KinderzimmerLicht)       ["Switch"]                       {channel="mqtt:topic:tasmota:Steckdose8:PowerSwitch"}
+Number    Steckdose8Power            "Leistung [%s Watt]"         <poweroutlet>     (KinderzimmerLicht)       ["Measurement","Power"]          {channel="mqtt:topic:tasmota:Steckdose8:Power"}
+Number    Steckdose8EnergyToday      "heute [%s kWh]"             <poweroutlet>     (KinderzimmerLicht)       ["Measurement","Energy"]         {channel="mqtt:topic:tasmota:Steckdose8:EnergyToday"}
+Number    Steckdose8EnergyAll        "insgesamt [%s kWh]"         <poweroutlet>     (KinderzimmerLicht)       ["Measurement","Energy"]         {channel="mqtt:topic:tasmota:Steckdose8:EnergyAll"}
 
-Number    Temperature1Temperature    "Temperatur [%s °C]"                <temperature>     (MeterPlus)               ["Measurement","Temperature"]    {channel="mqtt:topic:switchbot:temperature1:Temperature"}
-Number    Temperature1Humidity       "Feuchtigkeit [%s Proz.]"              <humidity>        (MeterPlus)               ["Measurement","Humidity"]       {channel="mqtt:topic:switchbot:temperature1:Humidity"}
-Number    Temperature1Battery        "Batterie [%s Proz.]"                  <batterylevel>    (MeterPlus)               ["Measurement","Battery"]        {channel="mqtt:topic:switchbot:temperature1:Battery"}
+// Switch    Steckdose8PowerSwitch      "Schalter"                  <switch>          (SchreibtischIlaria)      ["Switch"]                       {channel="mqtt:topic:tasmota:Steckdose8:PowerSwitch"}
+// Number    Steckdose8Power            "Leistung [%s Watt]"                  <poweroutlet>     (SchreibtischIlaria)      ["Measurement","Power"]          {channel="mqtt:topic:tasmota:Steckdose8:Power"}
+// Number    Steckdose8EnergyToday      "heute [%s kWh]"            <poweroutlet>     (SchreibtischIlaria)      ["Measurement","Energy"]         {channel="mqtt:topic:tasmota:Steckdose8:EnergyToday"}
+// Number    Steckdose8EnergyAll        "insgesamt [%s kWh]"        <poweroutlet>     (SchreibtischIlaria)      ["Measurement","Energy"]         {channel="mqtt:topic:tasmota:Steckdose8:EnergyAll"}
 
-Number    Temperature2Temperature    "Temperatur [%s °C]"                <temperature>     (MeterPlus2)              ["Measurement","Temperature"]    {channel="mqtt:topic:switchbot:temperature2:Temperature"}
-Number    Temperature2Humidity       "Feuchtigkeit [%s Proz.]"              <humidity>        (MeterPlus2)              ["Measurement","Humidity"]       {channel="mqtt:topic:switchbot:temperature2:Humidity"}
-Number    Temperature2Battery        "Batterie [%s Proz.]"                  <batterylevel>    (MeterPlus2)              ["Measurement","Battery"]        {channel="mqtt:topic:switchbot:temperature2:Battery"}
+Number    Temperature1Temperature    "Temperatur [%s °C]"         <temperature>     (MeterPlus)               ["Measurement","Temperature"]    {channel="mqtt:topic:switchbot:temperature1:Temperature"}
+Number    Temperature1Humidity       "Feuchtigkeit [%s Proz.]"    <humidity>        (MeterPlus)               ["Measurement","Humidity"]       {channel="mqtt:topic:switchbot:temperature1:Humidity"}
+Number    Temperature1Battery        "Batterie [%s Proz.]"        <batterylevel>    (MeterPlus)               ["Measurement","Battery"]        {channel="mqtt:topic:switchbot:temperature1:Battery"}
+
+Number    Temperature2Temperature    "Temperatur [%s °C]"         <temperature>     (MeterPlus2)              ["Measurement","Temperature"]    {channel="mqtt:topic:switchbot:temperature2:Temperature"}
+Number    Temperature2Humidity       "Feuchtigkeit [%s Proz.]"    <humidity>        (MeterPlus2)              ["Measurement","Humidity"]       {channel="mqtt:topic:switchbot:temperature2:Humidity"}
+Number    Temperature2Battery        "Batterie [%s Proz.]"        <batterylevel>    (MeterPlus2)              ["Measurement","Battery"]        {channel="mqtt:topic:switchbot:temperature2:Battery"}
