@@ -3,17 +3,17 @@ Group     Flur                       "Flur"                       <corridor>    
 Group     Schlafzimmer               "Schlafzimmer"               <bedroom>         (Wohnung)                 ["Bedroom"]
 Group     Kueche                     "Küche"                      <kitchen>         (Wohnung)                 ["Kitchen"]
 Group     Wohnzimmer                 "Wohnzimmer"                 <party>           (Wohnung)                 ["LivingRoom"]
-Group     Kinderzimmer               "Kinderzimmer"               <party>           (Wohnung)                 ["LivingRoom"]
+Group     Kinderzimmer               "Kinderzimmer"               <party>           (Wohnung)                 ["FamilyRoom"]
 Group     Bad                        "Bad"                        <bath>            (Wohnung)                 ["Bathroom"]
 
-Group     WohnzimmerLicht            "Wohnzimmer Licht"           <light>           (Wohnzimmer)              ["Lightbulb"]
 Group     SchreibtischClaudius       "Schreibtisch Claudius"      <office>          (Schlafzimmer)            ["PowerOutlet"]
+Group     WohnzimmerLicht            "Wohnzimmer Licht"           <light>           (Wohnzimmer)              ["Lightbulb"]
 Group     Sofasteckdose              "Steckdose Sofa"             <poweroutlet>     (Wohnzimmer)              ["PowerOutlet"]
-Group     Servertechnik              "Servertechnik"              <poweroutlet>     (Wohnzimmer)              ["PowerOutlet"]
 Group     Thermomix                  "Thermomix"                  <poweroutlet>     (Kueche)                  ["PowerOutlet"]
 Group     Kaffeemaschine             "Kaffeemaschine"             <poweroutlet>     (Kueche)                  ["PowerOutlet"]
 Group     Waschmaschine              "Waschmaschine"              <whitegood>       (Bad)                     ["WhiteGood"]
 //Group     SchreibtischIlaria         "Schreibtisch Ilaria"        <poweroutlet>     (Kinderzimmer)            ["PowerOutlet"]
+Group     Servertechnik              "Servertechnik"              <poweroutlet>     (Kinderzimmer)            ["PowerOutlet"]
 Group     KinderzimmerLicht          "Kinderzimmer Licht"         <light>           (Kinderzimmer)            ["Lightbulb"]
 
 Group     MeterPlus                  "Switchbot Meter Plus"       <temperature>     (Wohnzimmer)              ["Sensor"]
@@ -53,8 +53,8 @@ Number    Steckdose7Power            "Leistung [%s Watt]"         <energy>      
 Number    Steckdose7EnergyToday      "heute [%s kWh]"             <poweroutlet>     (Thermomix)               ["Measurement","Energy"]         {channel="mqtt:topic:tasmota:Steckdose7:EnergyToday"}
 Number    Steckdose7EnergyAll        "insgesamt [%s kWh]"         <poweroutlet>     (Thermomix)               ["Measurement","Energy"]         {channel="mqtt:topic:tasmota:Steckdose7:EnergyAll"}
 
-Switch    Steckdose8PowerSwitch      "Schalter"                   <switch>          (KinderzimmerLicht)       ["Switch"]                       {channel="mqtt:topic:tasmota:Steckdose8:PowerSwitch"}
-Number    Steckdose8Power            "Leistung [%s Watt]"         <poweroutlet>     (KinderzimmerLicht)       ["Measurement","Power"]          {channel="mqtt:topic:tasmota:Steckdose8:Power"}
+Switch    Steckdose8PowerSwitch      "On/off Schalter"            <lightbulb>       (KinderzimmerLicht)       ["Switch"]                       {channel="mqtt:topic:tasmota:Steckdose8:PowerSwitch"}
+Number    Steckdose8Power            "Leistung [%s Watt]"         <energy>          (KinderzimmerLicht)       ["Measurement","Power"]          {channel="mqtt:topic:tasmota:Steckdose8:Power"}
 Number    Steckdose8EnergyToday      "heute [%s kWh]"             <poweroutlet>     (KinderzimmerLicht)       ["Measurement","Energy"]         {channel="mqtt:topic:tasmota:Steckdose8:EnergyToday"}
 Number    Steckdose8EnergyAll        "insgesamt [%s kWh]"         <poweroutlet>     (KinderzimmerLicht)       ["Measurement","Energy"]         {channel="mqtt:topic:tasmota:Steckdose8:EnergyAll"}
 
